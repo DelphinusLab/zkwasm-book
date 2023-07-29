@@ -1,0 +1,10 @@
+[book]
+authors = ["Antony"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Delphinus Labs Documentation"
+
+[preprocessor.katex]
+
+[output.html]
