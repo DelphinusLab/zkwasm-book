@@ -2,7 +2,7 @@
 authors = ["Antony"]
 language = "en"
 multilingual = false
-src = "src"
+src = "doc"
 title = "Delphinus Labs Documentation"
 
 [preprocessor.katex]
