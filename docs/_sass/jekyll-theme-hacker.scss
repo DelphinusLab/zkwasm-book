@@ -78,8 +78,8 @@ header h1 {
 
 
 header h1:before {
-  content: "   ";
-  font-size: 24px;
+  content: " ";
+  font-size: 26px;
 }
 
 header h2 {
@@ -176,7 +176,7 @@ code.highlighter-rouge {
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 0px 3px;
   margin: 0px -3px;
-  color: #99678f;
+  color: #b989b0;
   border-radius: 2px;
 }
 
@@ -198,7 +198,7 @@ td {
 hr {
   height: 0;
   border: 0;
-  border-bottom: 1px dashed #b5e853;
+  border-bottom: 1px dashed #ac9448;
   color: #b5e853;
 }
 
