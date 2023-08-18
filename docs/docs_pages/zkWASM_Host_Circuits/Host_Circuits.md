@@ -177,4 +177,4 @@ The operation gate is the universal state transformation circuit that encodes th
 
 Each state transformation can contain multiple configuration and observation points which form a one-one relation between the operation gate and the processing gate. E.g., if we take the hash host circuit to be a state tranformation that has one configuration point; **hash_reset**, which indicates whether the start transform needs to be reset, and one observation point; **hash_final** which ensures the result of the hash is equal to the operand of **hash_final**.
 
-[back](./)
+[back](./../../)

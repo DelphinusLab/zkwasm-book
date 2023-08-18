@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Generating a Proof
 
 Generating a ZK-proven application whose proof is deployment ready is broken down into three stages.
@@ -209,3 +213,5 @@ In the Deployment Phase a verification contract is deployed on an Ethereum testn
 In the following we use the poseidon example from Delphinus Lab's zkWasm-C [repo](https://github.com/DelphinusLab/zkWasm-C)
 
 Using the make file generate `output.wasm` from within
+
+[back](./../../)
