@@ -1,2 +1,16 @@
-book
 temp
+
+# project
+_site
+.sass-cache
+.vagrant
+
+# general
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+Gemfile.lock
+
+beautiful-jekyll-theme-*.gem
+>>>>>>> 118400f (trying out theme)
