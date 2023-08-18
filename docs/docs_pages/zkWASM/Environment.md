@@ -40,4 +40,4 @@ cd ..
 cargo build --release
 ```
 <!-- [back](./) -->
-[back](./)
+[back](./../../)

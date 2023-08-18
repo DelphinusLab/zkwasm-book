@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # zkWASM Playground
 
 The [Delphinus Lab Service Explorer](https://zkwasm-explorer.delphinuslab.com/) provides a convenient user interface to:
@@ -193,4 +197,4 @@ Hit the Verify on Chain button, sign the transaction, in some time the transacti
 `Verification transaction successful! Transaction hash: 0x64f0c91ff3687541c674d9324a5869c9734f4729799869217e5640cda353f255`
 
 
-[back](./../)
+[back](./../../)
