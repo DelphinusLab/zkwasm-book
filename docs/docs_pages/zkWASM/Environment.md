@@ -39,5 +39,5 @@ Build zkWasm:
 cd ..
 cargo build --release
 ```
-<!-- [back](./) -->
+
 [back](./../../)
