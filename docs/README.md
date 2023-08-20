@@ -1,13 +1,9 @@
-# Summary
 
-- [Delphinus Labs book](./Introduction/README.md)
+# The Delphinus Lab Book
 
+Delphinus lab provides solutions for trustless computation and an application SDK based on a zkWasm virtual machine.<br>
 
-- [zkWASM Playground](./zkWASM_Playground/README.md)
+This book is written to not only describe the architecture of the zkWASM but also to educate users about the process of generating a WASM application and proof generation.
 
-- [zkWASM](./zkWASM/README.md)
-    - [Environment & Building](./zkWASM/Environment.md)
-    - [Generating a Proof](./zkWASM/Setup_and_Proof.md)
+[See the book live](https://delphinuslab.github.io/Delphinus-Lab-Book/)
 
-- [zkWASM Host Circuits](./zkWASM_Host_Circuits/README.md)
-    - [Circuits](./zkWASM_Host_Circuits/Circuits.md)
