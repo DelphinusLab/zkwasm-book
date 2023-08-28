@@ -14,7 +14,7 @@ rustc --version
 
 Clone the [zkWasm](https://github.com/DelphinusLab/zkWasm) repo and move into the directory:
 ```console
-git clone --recurse-submodules https://github.com/DelphinusLab/zkWasm.git
+git clone https://github.com/DelphinusLab/zkWasm.git
 cd zkWasm
 ```
 
