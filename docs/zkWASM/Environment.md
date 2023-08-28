@@ -14,18 +14,12 @@ rustc --version
 
 Clone the [zkWasm repo](https://github.com/DelphinusLab/zkWasm) and move into the directory:
 ```console
-git clone https://github.com/DelphinusLab/zkWasm.git
+git clone --recurse-submodules https://github.com/DelphinusLab/zkWasm.git
 cd zkWasm
 ```
 
-Remove the current `wasmi` directory:
+change into the `wasmi` directory from [Delphinus Labs](https://github.com/DelphinusLab/wasmi) and build using cargo:
 ```console
-rm -rf ./wasmi
-```
-
-clone the web assembily interpreter `wasmi` repo from [Delphinus Labs](https://github.com/DelphinusLab/wasmi) and build:
-```console
-git clone https://github.com/DelphinusLab/wasmi.git
 cd wasmi
 cargo build --release
 ```
