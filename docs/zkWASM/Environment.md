@@ -12,15 +12,20 @@ rustc --version
 ```
 
 
-Clone the [zkWasm repo](https://github.com/DelphinusLab/zkWasm) and move into the directory:
+Clone the [zkWasm](https://github.com/DelphinusLab/zkWasm) repo and move into the directory:
 ```console
 git clone --recurse-submodules https://github.com/DelphinusLab/zkWasm.git
 cd zkWasm
 ```
 
-change into the `wasmi` directory from [Delphinus Labs](https://github.com/DelphinusLab/wasmi) and build using cargo:
+initalize and update submodules for zkWasm:
 ```console
-cd wasmi
+git submodule init
+git submodule update
+```
+
+Build using cargo:
+```console
 cargo build --release
 ```
 
