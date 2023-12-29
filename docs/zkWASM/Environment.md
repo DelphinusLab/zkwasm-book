@@ -14,23 +14,15 @@ rustc --version
 
 Clone the [zkWasm](https://github.com/DelphinusLab/zkWasm) repo and move into the directory:
 ```console
-git clone https://github.com/DelphinusLab/zkWasm.git
-cd zkWasm
+git clone --recurse-submodules https://github.com/DelphinusLab/zkWasm.git
 ```
 
-initalize and update submodules for zkWasm:
-```console
-git submodule init
-git submodule update
-```
-
-Build using cargo:
+Build using cargo (CPU version):
 ```console
 cargo build --release
 ```
 
-Build zkWasm:
+Build GPU version (The recommended way of running zkWASM prover):
 ```console
-cd ..
-cargo build --release
+cargo build --release --features cuda
 ```
