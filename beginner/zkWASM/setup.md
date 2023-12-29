@@ -1,0 +1,63 @@
+# Setup Phase:
+
+With the wasm bytecode beinging generated, we can start setup the circuit of the VM. In the Setup Phase an application as a wasm image is used as input to zkWasm to generate a zkSNARK circuit for the application. The setup phase generates the output vkey.data for the image which is a circuit that commits its constant column.
+
+There are two modes to setup ZKWASM, the uniform-circuit mode and the image specific mode.
+
+## The unifirom-circuit mode
+When the zkWASM is run in the uniform-mode, its circuit is designed for all WASM images and the bytecode of the WASM image are witness of a certain column of the ZKWASM guest circuits. When a proof is generated using the uniform ZKWASM circuit, one need to provide the image commitment to the verifier to verify that certain proof is generated for a particula ZKWASM image.
+
+Within the directory `$WASMBIN` with the program build using [environment setup](./Environment.md), run the setup zkWasm with the input .wasm image (`ouput.wasm`) from above as follows.
+
+```
+cargo run --release --features uniform-circuit -- --host standard -k 18 --function zkmain --output $PROJECT/output --wasm $PROJECT/output.wasm setup
+```
+
+This produces the output files in `./params/`
+```
+.
+├── Makefile
+├── output.wasm
+├── params
+  ├── K18.params
+  ├── K21.params
+  ├── zkwasm.vkey.data
+  └── zkwasm.circuit.data
+└── zkmain.c/zkmain.rs
+```
+
+## The single image mode
+When the zkWASM is run in the single image mode (which is the default mode), its circuit is generated for a specific WASM image and the bytecode of the WASM image are fixed values of a certain column of the ZKWASM guest circuits. When a proof is generated using the single mode ZKWASM circuit, one do not need to provide the image commitment to the verifier and only the proof for that particular image can be verified using the generated verifier.
+
+Within the directory `$WASMBIN` with the program build using [environment setup](./Environment.md), run the setup zkWasm with the input .wasm image (`ouput.wasm`) from above as follows.
+
+```
+cargo run --release -- --host standard -k 18 --function zkmain --output $PROJECT/output --wasm $PROJECT/output.wasm setup
+```
+
+This produces the output files in `./params/`
+```
+.
+├── Makefile
+├── output.wasm
+├── params
+  ├── K18.params
+  ├── K21.params
+  ├── zkwasm.vkey.data
+  └── zkwasm.circuit.data
+└── zkmain.c/zkmain.rs
+```
+
+As the default mode is more friendly for beginers that might only focus on a particular application, the following content will assume the default mode is enabled. (However all examples should also works in uniform-mode).
+
+
+## Deploy Phase:
+
+In the Deployment Phase a verification contract is deployed on an Ethereum testnet.
+
+
+## Poseidon Example:
+
+In the following we use the poseidon example from Delphinus Lab's zkWasm-C [repo](https://github.com/DelphinusLab/zkWasm-C)
+
+Using the make file generate `output.wasm` from within
