@@ -1,4 +1,4 @@
-# Setup Phase:
+# Setup ZKWASM circuit
 
 With the wasm bytecode beinging generated, we can start setup the circuit of the VM. In the Setup Phase an application as a wasm image is used as input to zkWasm to generate a zkSNARK circuit for the application. The setup phase generates the output vkey.data for the image which is a circuit that commits its constant column.
 

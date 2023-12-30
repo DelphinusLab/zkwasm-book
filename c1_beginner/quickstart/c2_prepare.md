@@ -1,4 +1,4 @@
-# Prepare WASM Image:
+# Prepare WASM Image
 Since ZKWASM runs Web Assembly, applications that are suppose to run in ZKWASM have to be compiled into WASM. WebAssembly (WASM) is designed to be a portable compilation target for programming languages, enabling deployment on the web for client and server applications. A wide range of languages can be compiled into Wasm, with varying degrees of support. Some of the most notable languages include:
 
 C/C++: These are the most well-supported languages for compiling to WebAssembly. Tools like Emscripten are used to compile C and C++ code to Wasm.
