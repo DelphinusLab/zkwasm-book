@@ -1,4 +1,4 @@
-# Host Environment & Building
+# Setup & Build the ZKWASM binary
 
 To build and run these projects require the Rust compiler. Install with:
 
