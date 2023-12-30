@@ -1,7 +1,7 @@
-# typescript sdk for connecting with ZKWASM cloud.
+# Typescript SDK for connecting with ZKWASM cloud.
 
 ## Introduction
-zkWasm-service-helper(https://github.com/DelphinusLab/zkWasm-service-helper) is a typscript library to help communicate with zkwasm cloud service. It provides common APIS for ZKWASM application developers to use the cloud proving service to generate ZK proofs for WASM using ZKWASM virtual machine.
+zkWasm-service-helper(https://github.com/DelphinusLab/zkWasm-service-helper) is a typscript library to help communicate with zkwasm cloud service. It provides common APIS for ZKWASM application developers to use the cloud proving service to generate ZKWASM proofs.
 
 
 ## How to use it
