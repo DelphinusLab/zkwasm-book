@@ -1,4 +1,4 @@
-# Delphinus-Lab-Book
+# ZKWASM-Book
 
 This repo contains documentation about the ZKWASM and can be seen live at: [See the book live](https://zkwasmdoc.gitbook.io/delphinus-zkwasm/).
 
