@@ -1,4 +1,4 @@
-# zkWASM Playground
+# ZKWASM Cloud Service
 
 The [Delphinus Lab Service Explorer](https://zkwasm-explorer.delphinuslab.com/) provides a convenient user interface to:
 
@@ -44,9 +44,6 @@ Using upper right task bar on [Delphinus Lab Service Explorer](https://zkwasm-ex
   <img alt="title image light / dark." src="./assets/images/1_taskbar.png" width="700">
 </picture>
 </p>
-
-
-
 
 <p align="center">
 <picture>
