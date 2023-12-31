@@ -1,4 +1,4 @@
-# zkWASM Host Circuits
+# Customize and define zkWASM by extending host APIs.
 
 
 ## 1. Motivation

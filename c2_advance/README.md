@@ -1,3 +1,9 @@
-# ZKWASM for advance users
+# Build a rollup application
 
-This document is written to describe the proof generation structure and proof batching schemes for ZKWASM users that would like to make their own rollup application and define there own host api set based on the ZKWASM virtual machine.
+This document is suppose to be a complete reference for ZKWASM users that would like to make their own rollup application. Following topics will be covered:
+
+1. The architecture of a reference implementation of ZKWASM rollup application.
+2. The proof generation architecture.
+3. Customize and define your ZKWASM by extending host APIs.
+4. Customize your proof generation via proof batching scripts.
+3. Define settlement protocol and deploy your rollup verifier.
