@@ -49,15 +49,3 @@ This produces the output files in `./params/`
 ```
 
 As the default mode is more friendly for beginers that might only focus on a particular application, the following content will assume the default mode is enabled. (However all examples should also works in uniform-mode).
-
-
-## Deploy Phase:
-
-In the Deployment Phase a verification contract is deployed on an Ethereum testnet.
-
-
-## Poseidon Example:
-
-In the following we use the poseidon example from Delphinus Lab's zkWasm-C [repo](https://github.com/DelphinusLab/zkWasm-C)
-
-Using the make file generate `output.wasm` from within

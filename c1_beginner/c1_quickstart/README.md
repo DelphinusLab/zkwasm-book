@@ -10,4 +10,4 @@ Generating a ZK-proven application whose proof is deployment ready is broken dow
 
 In the Proof Phase a web assembly image is processed by zkWasm to generate a zkSNARK circuit for the application itself. The Proof Phase generates a zero knowledge proof corresponding to the applications execution against a guest and host virtual machine. Finally in the Deployment Phase a verification contract for the application is deployed on an EVM compatible network.<br>
 
-Moreover, before we can generate and proof out of ZKWASM virtual machine, we need to prepare a WASM image that we are going to run. 
+Moreover, before we start to generate proofs in ZKWASM, we need to prepare a WASM image that is suppose to be executed.
