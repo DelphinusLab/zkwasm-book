@@ -1,8 +1,28 @@
 # Aggregate (Batch) proofs
 
-Suppose that we have generated a guest proof with its loading info as follows:
+Suppose that we have generated a guest proof with its loading info and stored in the following directory.
+```
+.
+├── Makefile
+├── output.wasm
+├── params
+  ├── K18.params
+  ├── K21.params
+  ├── zkwasm.circuit.data
+  └── zkwasm.vkey.data
+├── output
+  ├── etable.json
+  ├── external_host_table.json
+  ├── imtable.json
+  ├── itable.json
+  ├── jtable.json
+  ├── mtable.json
+  ├── zkwasm.loadinfo.json
+  ├── zkwasm.0.instance.data
+  └── zkwasm.0.transcript.data
+```
 
-The overall information of the proof is stored in the zkwasm.loadinfo.json which looks like the following
+Also suppose the overall information of the proof is stored in the zkwasm.loadinfo.json which looks like the following
 ```
 {
   "circuit": "zkwasm.circuit.data",
@@ -66,5 +86,26 @@ Suppose that your project directory is the following:
 cargo run --release --features cuda -- --param ./params --output ./output batch -k 22 --challenge sha --info output/zkwasm.loadinfo.json  --name proofbatch --commits batchconfig.json
 ```
 
-This will generates a batch proof `proofbatch.loadinfo.json`.
+This will generates a batch proof `proofbatch.loadinfo.json` and the file structure in your project becomse the following
+```
+├── Makefile
+├── output.wasm
+├── params
+  ├── K18.params
+  ├── K22.params
+  ├── proofbatch.circuit.data
+  ├── proofbatch.vkey.data
+  ├── zkwasm.circuit.data
+  └── zkwasm.vkey.data
+├── output
+  ├── proofbatch.0.aux.data
+  ├── proofbatch.0.instance.data
+  ├── proofbatch.0.transcript.data
+  ├── proofbatch.loadinfo.json
+  ├── zkwasm.0.instance.data
+  ├── zkwasm.0.transcript.data
+  └── zkwasm.loadinfo.json
+```
+while `the proofbatch.circuit.data` is the verify circuit of the batcher and `proofbatch.loadinfo.data` describes the proof of the batching result. Since design a product ready rollup process is much more complicated than just batching a few proofs of a single circuit, please refer to [advanced topics of building a rollup application](../../c2_advance/README.md) for more details.
+
 
