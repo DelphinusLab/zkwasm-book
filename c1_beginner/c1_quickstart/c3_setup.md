@@ -10,7 +10,7 @@ When the zkWASM is run in the uniform-mode, its circuit is designed for all WASM
 Within the directory `$WASMBIN` with the program build using [environment setup](./Environment.md), run the setup zkWasm with the input .wasm image (`ouput.wasm`) from above as follows.
 
 ```
-cargo run --release --features uniform-circuit -- --host standard -k 18 --function zkmain --output $PROJECT/output --wasm $PROJECT/output.wasm setup
+cargo run --release --features uniform-circuit -- --host standard -k 18 --function zkmain --param params --output $PROJECT/output --wasm $PROJECT/output.wasm setup
 ```
 
 This produces the output files in `./params/`
@@ -32,7 +32,7 @@ When the zkWASM is run in the single image mode (which is the default mode), its
 Within the directory `$WASMBIN` with the program build using [environment setup](./Environment.md), run the setup zkWasm with the input .wasm image (`ouput.wasm`) from above as follows.
 
 ```
-cargo run --release -- --host standard -k 18 --function zkmain --output $PROJECT/output --wasm $PROJECT/output.wasm setup
+cargo run --release -- --host standard -k 18 --function zkmain --param params --output $PROJECT/output --wasm $PROJECT/output.wasm setup
 ```
 
 This produces the output files in `./params/`
