@@ -1,4 +1,4 @@
-# Build a rollup application
+# Build a Rollup Application
 
 This document is suppose to be a complete reference for ZKWASM users that would like to make their own rollup application. Following topics will be covered:
 

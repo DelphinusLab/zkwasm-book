@@ -1,4 +1,4 @@
-# ZKWASM Circuit Design
+# Circuit Design
 
 ## 1 INTRODUCTION
 WASM (or WebAssembly) is an open standard binary code format close to assembly. Its initialobjective is to provide an alternative to java-script with better performance in the current webecosystems. Benefiting from its platform independence, front-end flexibility (can be compiled fromthe majority of languages including C, C++, assembly script, rust, etc.), good isolated runtimeand speed that is close to native binary, its usage starts to arise in the distributed cloud and edgecomputing. Recently it has become a popular binary format for users to run customized functionson AWS Lambda, Open Yurt, AZURE, etc.
