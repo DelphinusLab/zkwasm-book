@@ -1,4 +1,4 @@
-# Using the ZKWASM proof batcher
+# Batch ZKWASM proofs
 
 ## Description of the circuit
 A circuit describes its params, gates, copy constraints and lookups. For any circuits involved in the DELPHINUS-ZKWASM system, we describe it using a circuit description file (usually with name circuitName.circuit.data). A circuit description info is usefull for a few ways.

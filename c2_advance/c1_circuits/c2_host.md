@@ -1,5 +1,4 @@
-# Customize and define zkWASM by extending host APIs.
-
+# Host Circuits.
 
 ## 1. Motivation
 Customizable host circuits and host API is a key feature of DelphinusLab zkWASM which provides a way to support the WASM host API specification.
