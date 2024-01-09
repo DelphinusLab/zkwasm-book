@@ -1,4 +1,4 @@
-# ZKWASM Circuit Overview
+# Overview of ZK Circuits
 A ZK Circuit in abstract is a matrix that each column represents a function $$f_i(w_j)$$ where $$j=1,2,3 \cdots$$ and a set of constraints $$C$$. A constraint in $$C$$ can be describe as a function equation $$H(f_i(w * g^j) = 0$$. Given an arbitrary instance of matrix, if all cloumn of the matrix satisfies the constraints $$C$$ then it is a valid instanation of the given circuit.
 
 Futhermore, given a matrix, we have 3 different type of columns.
