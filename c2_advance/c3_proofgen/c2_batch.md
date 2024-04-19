@@ -41,6 +41,7 @@ where `cache_file` is the path of your targeting circuit description file.
 ## Overview of the Batching Tool
 
 ### Generate batch proof from ProofLoadInfos
+
 We support two modes of batching proofs. The rollup continuation mode and the flat mode. In both mode we have two options to handle the public instance of the target proofs when batching.
 1. The commitment encode: The commitment of the target instance becomes the public instance of the batch proof.
 2. The hash encode: The hash of the target instance become the public instance of the batch proof.
@@ -135,9 +136,7 @@ cargo run --release --features cuda -- --param ./params --output ./output verify
 cargo run --release -- --param ./params --output ./output solidity -k 22 --challenge keccak --info output/batchsample.loadinfo.json
 ```
 
-
 ## Tool Details
-
 1. Describe circuits.
 2. Generate the proofs of target circuits.
 3. Define your batching policy via the batch DSL.
@@ -160,6 +159,7 @@ type ProofPieceInfo = {
   transcript: filename
 }
 ```
+
 ### Description of a proof group
 To batch a group of proofs together, the proofs themself need to be generated using the same param k (not necessarily the same circuit). When describing the group we provide the following fields:
 
