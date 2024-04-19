@@ -17,5 +17,5 @@ In summary, WASM host functions are a crucial part of the WebAssembly ecosystem,
 In the ZKWASM, we provide a wide range of pre-defined host functions to ease the burden of building solphiscated applications. We devides them into three major categores
 
 1. IO related host functions
-2. Witness related host functions.
+2. Constraint related host functions.
 3. Predefined host functiosn with external circuits support.
