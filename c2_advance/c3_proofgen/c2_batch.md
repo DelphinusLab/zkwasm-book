@@ -186,7 +186,7 @@ Suppose that we would like to batch our target proofs **T_i**, the batching circ
 
 In this tool, we support two accumulator mode to pass the information of the instance of **T_i** to the instance of **C_b**, namely in **HashInstance** mode and **CommitInstance** mode.
 
-![Alt text](./images/prove-agg-instance-mode.png?raw=true "Two modes to carry the instances of target proofs")
+![Alt text](./assets/images/prove-agg-instance-mode.png?raw=true "Two modes to carry the instances of target proofs")
 
 ## Description the batch schema when connecting proofs
 When batch proofs, we are infact writing the verifying function into circuits. Thus we need to specify the compoments of the circuits we used to construct the final verifying circuit. The main conponents of the verifing cicruit contains the challenge circuit (the hash we use to generate the challenge), the ecc circuit (what is used to generate msm and pairing), the proof relation circuit (what is used to describe the relation between proofs, their instances, commitments, etc)
@@ -233,7 +233,7 @@ Suppose that we have two circuits, **circuit_1** and **circuit_2**, they both ha
 }
 ```
 the batch will ensure the witness of column **A** of the first proof of **circuit_1** will equal to the witness of column **B** of the first proof of **circuit_2**.
-![Alt text](./images/commitment-equivalent.png?raw=true "Equivalents of the commitments between two proofs")
+![Alt text](./assets/images/commitment-equivalent.png?raw=true "Equivalents of the commitments between two proofs")
 
 
 **2. Expose**
@@ -248,7 +248,7 @@ Suppose that we have two groups of proofs that batched into **batch_proof_1** an
 }
 ```
 and then expose **B** in the proof relation sheet of **batch_proof_2**. The expose of witness will append three new instances to the instances of the batched proof which represents the commitment of the witness.
-![Alt text](./images/commitment-expose.png?raw=true "Expose the commitment from the target proof")
+![Alt text](./assets/images/commitment-expose.png?raw=true "Expose the commitment from the target proof")
 
 **3. Absorb**
 Suppose that we have a batched proof **batch_proof_1** which contains **proof_1** and another proof **proof_2**. Then it follows that if we would like to establish a connection betweeen witness **A** of **proof_1** and witness **B** of **proof_2**, we need not only expose **A** in the proof relation sheet of **batch_proof_1** but also provide a semantic for the batcher to ensure that the exposed commitment of **A** is equal to the commitment of **B** in **proof_2**. Since **proof_2** has not been batched yet, neither **equivalents** or **expose** will work. Thus, we need a new semantic called **absorb** here.
@@ -260,4 +260,4 @@ Suppose that we have a batched proof **batch_proof_1** which contains **proof_1*
 	    }
     ]
 ```
-![Alt text](./images/commitment-absorb.png?raw=true "Absorb the exposed commitment from the batched proof")
+![Alt text](./assets/images/commitment-absorb.png?raw=true "Absorb the exposed commitment from the batched proof")
