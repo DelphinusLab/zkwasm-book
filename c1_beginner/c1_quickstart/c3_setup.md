@@ -10,7 +10,7 @@ When the zkWASM is run in the uniform-mode, its circuit is designed for all WASM
 Within the directory `$WASMBIN` with the program build using [environment setup](./Environment.md), run the setup zkWasm with the input .wasm image (`ouput.wasm`) from above as follows.
 
 ```
-cargo run --release --features uniform-circuit -- --host standard -k 18 --function zkmain --param params --output $PROJECT/output --wasm $PROJECT/output.wasm setup
+cargo run --release --features uniform-circuit -- --param params testwasm setup --host standard -k 18
 ```
 
 This produces the output files in `./params/`
@@ -20,9 +20,8 @@ This produces the output files in `./params/`
 ├── output.wasm
 ├── params
   ├── K18.params
-  ├── K21.params
-  ├── zkwasm.vkey.data
-  └── zkwasm.circuit.data
+  ├── testwasm.circuit.finalized.data
+  └── testwasm.zkwasm.data
 └── zkmain.c/zkmain.rs
 ```
 
@@ -32,7 +31,7 @@ When the zkWASM is run in the single image mode (which is the default mode), its
 Within the directory `$WASMBIN` with the program build using [environment setup](./Environment.md), run the setup zkWasm with the input .wasm image (`ouput.wasm`) from above as follows.
 
 ```
-cargo run --release -- --host standard -k 18 --function zkmain --param params --output $PROJECT/output --wasm $PROJECT/output.wasm setup
+cargo run --release -- --param params testwasm setup --host standard -k 18 --wasm $PROJECT/output.wasm
 ```
 
 This produces the output files in `./params/`
@@ -42,9 +41,8 @@ This produces the output files in `./params/`
 ├── output.wasm
 ├── params
   ├── K18.params
-  ├── K21.params
-  ├── zkwasm.vkey.data
-  └── zkwasm.circuit.data
+  ├── testwasm.circuit.finalized.data
+  └── testwasm.zkwasm.data
 └── zkmain.c/zkmain.rs
 ```
 
