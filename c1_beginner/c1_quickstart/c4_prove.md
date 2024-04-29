@@ -53,9 +53,9 @@ The overall information of the proof is stored in the zkwasm.loadinfo.json which
 }
 ```
 
-There are a few things in zkwasm.loadinfo.json worth mention at this stage. First of all, the testwasm.circuit.finalized.data file contains all the information about the circuit (vkey, constraints, gate shape, etc). The testwasm.X.instance.data is the public instance for the proof, the testwasm.X.transcript.data is the execution proof generated for the output.wasm with given inputs. XXX.json files in the trace director are execution trace for debugging purpose and the external_host_table is the trace of the host function calling info (In this example, we do not invoke any host apis thus the external_host_table is empty. Please refere to ZKWASM host circuits for more details).
+A few things in zkwasm.loadinfo.json are worth mentioning at this stage. First of all, the testwasm.circuit.finalized.data file contains all the information about the circuit (vkey, constraints, gate shape, etc). The testwasm.X.instance.data is the public instance for the proof, the testwasm.X.transcript.data is the execution proof generated for the output.wasm with given inputs. XXX.json files in the trace directory are execution trace for debugging purpose and the external_host_table is the trace of the host function calling info (In this example, we do not invoke any host apis thus the external_host_table is empty. Please refer to ZKWASM host circuits for more details).
 
-The process of proof generation requires reading the vkey which is implied by the output.circuit.finalized data and `K.params` that is generated in the previous Setup Phase. These files in the params folder will be need in the proof batching phase when we batch several proofs together to generate a single aggregated proof<br> (Please refere to the proof batching phase for more details about proof arrangement and batching).
+The process of proof generation requires reading the vkey which is implied by the output.circuit.finalized data and `K.params` that is generated in the previous Setup Phase. These files in the params folder will be needed in the proof batching phase when we batch several proofs together to generate a single aggregated proof<br> (Please refer to the proof batching phase for more details about proof arrangement and batching).
 
 ## Proof Verification:
 

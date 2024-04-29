@@ -1,6 +1,6 @@
 # Setup & Build the ZKWASM binary
 
-To build and run these projects require the Rust compiler. Install with:
+To build and run these projects requires the Rust compiler. Install rustup with:
 
 ```console
 curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh
