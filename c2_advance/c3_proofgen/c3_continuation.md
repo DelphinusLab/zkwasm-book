@@ -28,7 +28,7 @@ Aggregate the proofs generated above using [continuation-batcher](https://github
 
 ```
 cd continuation-batcher
-cargo run --release --features cuda -- --param $pwd/params --output $pwd/output batch -k 22 --challenge sha --info  $pwd/output/$NAME.loadinfo.json --name ${NAME}_agg --commits $CONT_BATCH_INFO --cont
+cargo run --release --features cuda -- --params $pwd/params --output $pwd/output batch -k 22 --challenge sha --info  $pwd/output/$NAME.loadinfo.json --name ${NAME}_agg --commits $CONT_BATCH_INFO --cont
 ```
 > It is important to note that the params and output directories should be consistent with those in Section 1 to correctly read the structured reference string (SRS) and the file information described in `$NAME.loadinfo.json`. Better to specifies a different name from Section 1 for the `--name` parameter, such as adding the suffix `_agg` to avoid naming conflicts. `$CONT_BATCH_INFO` is a JSON configuration file for the batcher, specifying the constraints on `img_col` and `post_img_col` between adjacent segments (**to be modified**).
 
