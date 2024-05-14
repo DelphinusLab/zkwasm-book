@@ -18,7 +18,7 @@ Where `$NAME` is the configuration prefix for generating continuation proofs. Bo
 ## 1.2 generate proofs:
 
 ```
-cargo run --release --features continuation,cuda --params ./params $NAME prove --wasm $pwd/params/$WASM_IAMGE --output $pwd/output 
+cargo run --release --features continuation,cuda -- --params ./params $NAME prove --wasm $pwd/params/$WASM_IAMGE --output $pwd/output 
 ```
 
 During this process, zkWasm will first run the specified `$WASM_IAMGE` and generate traces files for the program in the `output` directory. It will then divide the traces into N segments, generating instances (`$NAME.$.instance.json`) and proofs (`$NAME.$.transcript.json`) for each segment. Information about N segment instances and proofs are written into the `$NAME.loadinfo.json` file for subsequent proof aggregation.
@@ -28,7 +28,7 @@ Aggregate the proofs generated above using [continuation-batcher](https://github
 
 ```
 cd continuation-batcher
-cargo run --release --features cuda --param $pwd/params --output $pwd/output batch -k 22 --challenge sha --info  $pwd/output/$NAME.loadinfo.json --name ${NAME}_agg --commits $CONT_BATCH_INFO --cont
+cargo run --release --features cuda -- --params $pwd/params --output $pwd/output batch -k 22 --challenge sha --info  $pwd/output/$NAME.loadinfo.json --name ${NAME}_agg --commits $CONT_BATCH_INFO --cont
 ```
 > It is important to note that the params and output directories should be consistent with those in Section 1 to correctly read the structured reference string (SRS) and the file information described in `$NAME.loadinfo.json`. Better to specifies a different name from Section 1 for the `--name` parameter, such as adding the suffix `_agg` to avoid naming conflicts. `$CONT_BATCH_INFO` is a JSON configuration file for the batcher, specifying the constraints on `img_col` and `post_img_col` between adjacent segments (**to be modified**).
 

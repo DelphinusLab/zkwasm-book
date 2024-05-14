@@ -36,7 +36,7 @@ Also suppose the overall information of the proof is stored in the zkwasm.loadin
 }
 ```
 
-Although the guest circuit proof is constant size, it is still big and its verify algorithm is a bit costy. In ZKWASM we have a structured layer of batching multi proofs into a simple small proof to reduce the cost of onchain verification. (Please refer to [proof batch](../../c2_advance/c2_batcher/README.md))
+Although the guest circuit proof is constant size, it is still big and its verify algorithm is a bit costy. In ZKWASM we have a structured layer of batching multi proofs into a simple small proof to reduce the cost of onchain verification. (Please refer to [proof batch](../../c2_advance/c3_proofgen/c2_batch.md))
 
 Here, for simplification, we use ZKWASM batcher to batch the above proof into a small one.
 
@@ -72,7 +72,7 @@ Suppose that your project directory is the following:
 
 3. run the continuation batcher in batch mode:
 ```
-cargo run --release --features cuda -- --param ./params --output ./output batch -k 22 --challenge sha --info output/testwasm.loadinfo.json  --name proofbatch --commits batchconfig.json
+cargo run --release --features cuda -- --params ./params --output ./output batch -k 22 --challenge sha --info output/testwasm.loadinfo.json  --name proofbatch --commits batchconfig.json
 ```
 
 This will generates a batch proof `proofbatch.loadinfo.json` and the file structure in your project becomse the following
