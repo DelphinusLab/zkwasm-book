@@ -256,3 +256,45 @@ Suppose that we have a batched proof **batch_proof_1** which contains **proof_1*
 ```
 <div><img src="./assets/images/commitment-absorb.png?raw=true" width="70%"/></div>
 
+
+## Batching Circuit Generation
+When generating a batch circuit, the basic ingredients are the verifying algorithms of each target cicruits. To describe a verifying algorithm we specify it into an algorithm AST (abstract syntax tree) and the basic operation in such AST is described as follows:
+```
+#[derive(Clone, Debug, Eq, PartialEq, Hash)]
+pub enum EvalOps {
+    TranscriptReadScalar(usize, EvalPos),
+    TranscriptReadPoint(usize, EvalPos),
+    TranscriptCommonScalar(usize, EvalPos, EvalPos),
+    TranscriptCommonPoint(usize, EvalPos, EvalPos),
+    TranscriptSqueeze(usize, EvalPos),
+
+    ScalarAdd(EvalPos, EvalPos),
+    ScalarSub(EvalPos, EvalPos),
+    ScalarMul(EvalPos, EvalPos, bool),
+    ScalarDiv(EvalPos, EvalPos),
+    ScalarPow(EvalPos, u32),
+
+    MSM(Vec<(EvalPos, EvalPos)>, EvalPos), // add last MSMSlice for dependence
+    MSMSlice((EvalPos, EvalPos), Option<EvalPos>, usize), // usize: msm group
+
+    CheckPoint(String, EvalPos), // for debug purpose
+}
+
+```
+
+where the terms of the EvalOps are as follows:
+```
+pub enum EvalPos {
+    Constant(usize),
+    Empty,
+    Instance(usize, usize),
+    Ops(usize),
+}
+
+```
+Thus verifying algorithm is a huge AST generated from the verification key of the target circuits. The motivation of doing so is to simplified the maintaince efforts of emitting the target verifying code. For example, if we would like to emit a native verifying binary, we can compile the AST into the native code. In the proof batching scenario, we compile the AST into circuits by providing all the circuits of EvalOps and then connecting them together based on the AST.
+
+For example, https://github.com/DelphinusLab/halo2aggregator-s/blob/main/src/circuit_verifier/mod.rs implements a compiler that emits a halo2 circuits for the verifying algorithm. In addition to circuit generation, we can also use the solidity generator to generate a verifying contract by implementing a compiler like https://github.com/DelphinusLab/halo2aggregator-s/blob/main/src/solidity_verifier/codegen.rs. More over, you can generate an R1CS circuit for the verifying algorithm (useful in the last round batching to reduce gas fee) by implementing a compiler that targets circom as a backend target.
+
+
+
