@@ -11,7 +11,6 @@ Verify the installation with:
 rustc --version
 ```
 
-
 Clone the [zkWasm](https://github.com/DelphinusLab/zkWasm) repo and move into the directory:
 ```console
 git clone --recurse-submodules https://github.com/DelphinusLab/zkWasm.git
@@ -23,6 +22,11 @@ cargo build --release
 ```
 
 Build GPU version (The recommended way of running zkWASM prover):
+```console
+cargo build --release --features perf
+```
+
+Also if you do not have a powerful gpu (eg. nvidia-4090), you can compromize the performance by
 ```console
 cargo build --release --features cuda
 ```

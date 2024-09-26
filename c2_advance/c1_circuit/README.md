@@ -21,7 +21,7 @@ Proof is generated after the syntehsize stage via PCS(polynomial commitment sche
 The proof verification algorithm is simply open all the commintment of PCS to check that the polynomial constraints holds.
 
 ## Circuits involved in ZKWASM
-In ZKWASM, there are three different categories of circuits. 
+In ZKWASM, there are three different categories of circuits.
 1. Guest Circuit. This is the main circuit of ZKWASM is the guest circuit which proves the execution of WASM bytecode and enforces the semantics of WASM specification.
 2. Host Circuits. These are the precompiled circuits plugins for the guest circuit that provides pre-defined functions via the WASM hostop specification.
 3. Proof Batching Circuits. These are circuits to connecting proofs together to form a compact proof.

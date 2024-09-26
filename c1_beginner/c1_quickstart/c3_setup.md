@@ -10,7 +10,7 @@ When the zkWASM is run in the uniform-mode, its circuit is designed for all WASM
 Within the directory `$WASMBIN` with the program build using [environment setup](./c1_install.md), run the setup zkWasm with the input .wasm image (`ouput.wasm`) from above as follows.
 
 ```
-cargo run --release --features uniform-circuit -- --params params testwasm setup --host standard -k 18
+cargo run --release --features uniform-circuit -- --params ./params testwasm setup --host standard
 ```
 
 This produces the output files in `./params/`
@@ -31,7 +31,7 @@ When the zkWASM is run in the single image mode (which is the default mode), its
 Within the directory `$WASMBIN` with the program build using [environment setup](./c1_install.md), run the setup zkWasm with the input .wasm image (`ouput.wasm`) from above as follows.
 
 ```
-cargo run --release -- --params params testwasm setup --host standard -k 18 --wasm $PROJECT/output.wasm
+cargo run --release -- --params ./params testwasm setup --host standard --wasm $PROJECT/output.wasm
 ```
 
 This produces the output files in `./params/`
@@ -40,10 +40,30 @@ This produces the output files in `./params/`
 ├── Makefile
 ├── output.wasm
 ├── params
-  ├── K18.params
+  ├── K22.params
   ├── testwasm.circuit.finalized.data
   └── testwasm.zkwasm.data
 └── zkmain.c/zkmain.rs
 ```
 
 As the default mode is more friendly for beginers that might only focus on a particular application, the following content will assume the default mode is enabled. (However all examples should also works in uniform-mode).
+
+## The continuation mode
+When you are running a wasm image with unbounded execution trace, you need to use the continuation mode of zkWasm which will splits the excution trace into slices and generate proofs for each slice.
+```
+cargo run --release --features continuation --params ./params testwasm setup
+```
+This produces the output files in `./params/`
+```
+.
+├── Makefile
+├── output.wasm
+├── params
+  ├── K22.params
+  ├── testwasm.circuit.finalized.data
+  ├── testwasm.circuit.ongoing.data
+  └── testwasm.zkwasm.data
+└── zkmain.c/zkmain.rs
+```
+
+

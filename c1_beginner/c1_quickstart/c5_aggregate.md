@@ -6,8 +6,7 @@ Suppose that we have generated a guest proof with its loading info and stored in
 ├── Makefile
 ├── output.wasm
 ├── params
-  ├── K18.params
-  ├── K21.params
+  ├── K22.params
   ├── testwasm.circuit.finalized.data
   └── testwasm.zkwasm.config
 ├── output
@@ -46,8 +45,7 @@ Suppose that your project directory is the following:
 ├── Makefile
 ├── output.wasm
 ├── params
-  ├── K18.params
-  ├── K21.params
+  ├── K22.params
   ├── testwasm.circuit.finalized.data
   └── testwasm.zkwasm.config
 ├── output
@@ -80,7 +78,6 @@ This will generates a batch proof `proofbatch.loadinfo.json` and the file struct
 ├── Makefile
 ├── output.wasm
 ├── params
-  ├── K18.params
   ├── K22.params
   ├── proofbatch.circuit.data
   ├── proofbatch.vkey.data
@@ -96,5 +93,3 @@ This will generates a batch proof `proofbatch.loadinfo.json` and the file struct
   └── testwasm.0.instance.data
 ```
 while `the proofbatch.circuit.data` is the verify circuit of the batcher and `proofbatch.loadinfo.data` describes the proof of the batching result. Since design a product ready rollup process is much more complicated than just batching a few proofs of a single circuit, please refer to [advanced topics of building a rollup application](../../c2_advance/README.md) for more details.
-
-

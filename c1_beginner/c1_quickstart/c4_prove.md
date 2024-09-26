@@ -10,7 +10,7 @@ To generate a single proof using zkWasm using the wasm image generated from the 
 $ZKWASMBIN/zkwasm-cli --params ./params testwasm prove --output ./output --wasm ./pkg/output.wasm --public 1:i64 --private 1:i64
 ```
 
-In the above command `--host` specifies the host api set we would like to use. Since our application does not relies on any special WASI functions, we use the default. The `-k 18` implies that the circuit size is `2^18` and `--params` tells the prover refer to `/params` folder for all circuit specific data. The `--output` argument specify the output folder for proof results (together with some intermediate files).
+In the above command `--host` specifies the host api set we would like to use. Since our application does not relies on any special WASI functions, and `--params` tells the prover refer to `/params` folder for all circuit specific data. The `--output` argument specify the output folder for proof results (together with some intermediate files).
 
 After executing the commnad, it should produce the following files in the output directory `--output ./output`.
 
@@ -24,7 +24,7 @@ After executing the commnad, it should produce the following files in the output
     ├── jtable.json
     ├── itable.json
     └── testwasm.etable.0.json
-  ├── K18.params
+  ├── K22.params
   ├── testwasm.circuit.finalized.data
   └── testwasm.zkwasm.data
 ├── output
@@ -37,7 +37,7 @@ After executing the commnad, it should produce the following files in the output
 The overall information of the proof is stored in the zkwasm.loadinfo.json which looks like the following
 ```
 {
-  "k": 18,
+  "k": 22,
   "proofs": [
     {
       "circuit": "testwasm.circuit.finalized.data",
@@ -47,7 +47,7 @@ The overall information of the proof is stored in the zkwasm.loadinfo.json which
       "transcript": "testwasm.0.transcript.data"
     }
   ],
-  "param": "K18.params",
+  "param": "K22.params",
   "name": "testwasm",
   "hashtype": "Poseidon"
 }
