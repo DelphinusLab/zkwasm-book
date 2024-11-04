@@ -1,6 +1,6 @@
 # Prove WASM execution
 
-## Proof Generation of a signle execution
+## Proof Generation of a single execution
 
 In the Proof Phase the web assembly interpreter (wasmi) outputs two traces; the web assembly bytecode as the execution trace & the host API call trace. These record the order of the host API calls and their output. The combination of the two traces ensures the host call trace is in the same order as the execution trace (including the same input arguments).<br>
 
