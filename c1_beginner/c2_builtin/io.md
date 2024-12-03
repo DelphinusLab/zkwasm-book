@@ -1,7 +1,7 @@
 # IO Functions
 
 ## Fetch External Inputs
-Since a ZKP circuits distinguish between public inputs(instances) and private inputs(witness), ZKWASM supports two different way to fetch inputs from the user, **zkwasm_input(1)** reads an public instance from the user and **zkwasm_input(0)** reads a private input(witness).
+Since a ZKP circuit distinguishes between public inputs(instances) and private inputs(witness), ZKWASM supports two different ways to fetch inputs from the user, **zkwasm_input(1)** reads a public instance from the user and **zkwasm_input(0)** reads a private input(witness).
 
 ```
 extern "C" {
@@ -22,7 +22,7 @@ fn get_inputs() -> [u64; 3] {
 ```
 
 ## Witness Queue.
-The ZKWASM run time supports multiple queue. When the ZKWASM runs an image, the input witness queues is initialzed by a sequence of u64 specified by the ZKWASM running API (See command line args --private). Once this queue is specified, we can not change it and all the witness can be fetched from the beginning (start from index 0) by **zkwasm_input(0)** one by one.
+The ZKWASM run time supports multiple queue. When the ZKWASM runs an image, the input witness queues is initialized by a sequence of u64 specified by the ZKWASM running API (See command line args --private). Once this queue is specified, we can not change it and all the witness can be fetched from the beginning (start from index 0) by **zkwasm_input(0)** one by one.
 
 Suppose that a list of witness inputs are specified via --private input1:i64 input2:i64 input3:i64 ..., then the following code should return an array of [input1, input2, input3]
 
