@@ -1,6 +1,6 @@
 # Setup ZKWASM circuit
 
-With the wasm bytecode beinging generated, we can start setup the circuit of the VM. In the Setup Phase an application as a wasm image is used as input to zkWasm to generate a zkSNARK circuit for the application. The setup phase generates the output vkey.data for the image which is a circuit that commits its constant column.
+With the wasm bytecode being generated, we can start setup the circuit of the VM. In the Setup Phase an application as a wasm image is used as input to zkWasm to generate a zkSNARK circuit for the application. The setup phase generates the output vkey.data for the image which is a circuit that commits its constant column.
 
 There are two modes to setup ZKWASM, the uniform-circuit mode and the image specific mode.
 
@@ -49,7 +49,7 @@ This produces the output files in `./params/`
 As the default mode is more friendly for beginers that might only focus on a particular application, the following content will assume the default mode is enabled. (However all examples should also works in uniform-mode).
 
 ## The continuation mode
-When you are running a wasm image with unbounded execution trace, you need to use the continuation mode of zkWasm which will splits the excution trace into slices and generate proofs for each slice.
+When you are running a wasm image with unbounded execution trace, you need to use the continuation mode of zkWasm which will splits the execution trace into slices and generate proofs for each slice.
 ```
 cargo run --release --features continuation --params ./params testwasm setup
 ```
