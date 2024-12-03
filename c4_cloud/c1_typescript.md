@@ -1,11 +1,11 @@
 # Typescript SDK for connecting with ZKWASM cloud.
 
 ## Introduction
-zkWasm-service-helper(https://github.com/DelphinusLab/zkWasm-service-helper) is a typscript library to help communicate with zkwasm cloud service. It provides common APIS for ZKWASM application developers to use the cloud proving service to generate ZKWASM proofs.
+zkWasm-service-helper(https://github.com/DelphinusLab/zkWasm-service-helper) is a typescript library to help communicate with zkwasm cloud service. It provides common APIs for ZKWASM application developers to use the cloud proving service to generate ZKWASM proofs.
 
 
 ## How to use it
-The default RPC point for ZKWASM cloud is "https://rpc.zkwasmhub.com:8090". This lib main provide a ZkWasmServiceHelper class to help user to communicate to this RPC endpoint. It mainly provides the following APIs to perform proving tasks and query informations about submitted tasks.
+The default RPC point for ZKWASM cloud is "https://rpc.zkwasmhub.com:8090". This lib main provide a ZkWasmServiceHelper class to help user to communicate to this RPC endpoint. It mainly provides the following APIs to perform proving tasks and query information about submitted tasks.
 
 Example APIs:
 * async queryImage(md5: string);
@@ -13,7 +13,7 @@ Example APIs:
 * async addNewWasmImage(task: WithSignature<AddImageParams>);
 * async addProvingTask(task: WithSignature<ProvingParams>);
 
-### A example to add new wasm image
+### An example to add new wasm image
 This example typescript code will add the wasm image to the zkwasm service.
 ```
 import {
@@ -52,7 +52,7 @@ let response = await helper.addNewWasmImage(task);
 
 ```
 
-### A example to add proving tasks
+### An example to add proving tasks
 This example typescript code will add proving tasks to the zkwasm service.
 ```
 import {
@@ -96,7 +96,7 @@ let task: WithSignature<ProvingParams> = {
 let response = await helper.addProvingTask(task);
 ```
 
-### A example to query task details
+### An example to query task details
 This example typescript code will query task details:
 ```
 import {
