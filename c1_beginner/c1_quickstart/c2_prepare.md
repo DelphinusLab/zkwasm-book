@@ -106,7 +106,7 @@ pub fn zkmain() -> {
 }
 ```
 
-Simlarly the Makefile used to generate WASM from RUST is the following:
+Similarly the Makefile used to generate WASM from RUST is the following:
 ```
 build:
 	wasm-pack build --release --out-name rust-sdk-test.wasm --out-dir pkg --features wasmbind
