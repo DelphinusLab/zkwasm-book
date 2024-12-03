@@ -177,7 +177,7 @@ With the verification contract deployed we can verify the proof on chain with th
 </picture>
 </p>
 
-Hit the Verify on Chain button, sign the transaction, in some time the transaction receipt should should produce a successful on chain verification.<br>
+Hit the Verify on Chain button, sign the transaction, in some time the transaction receipt should produce a successful on chain verification.<br>
 
 
 <p align="center">
