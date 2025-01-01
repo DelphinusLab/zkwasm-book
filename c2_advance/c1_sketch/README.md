@@ -1,5 +1,5 @@
 # Rollup Application Sketch
-We can treat the server code of a constant runing service is has the following code sketh:
+We treat the server code of an application as a constant runing service, which has the following code sketh:
 ```
 pub server() {
     while(true) {
@@ -16,11 +16,11 @@ pub server() {
         }
         verify_tx_signature(params.clone());
         handle_tx(params);
-        let trace = unsafe {wasm_trace_size()};
-        zkwasm_rust_sdk::dbg!("trace track: {}\n", trace);
     }
 }
 ```
+
+The following graph represents the infinite loop structure with a breakdown of its components and their interactions:
 
 <p align="center">
 <picture>
@@ -30,7 +30,7 @@ pub server() {
 </p>
 
 
-However, since the above infinite loop of ``while(true)`` will produce a infinite execution trace of a WASM image, the server execution can not been proved in on proof. To resolve this, we need to add a preemption point in the while loop so that after a few transactions have been handled, we can produce a proof only for an finite amount of transactions.
+However, since the above infinite loop of ``while(true)`` will produce a infinite execution trace of a WASM image, the server execution can not been proved in one single proof. To resolve this, we need to add a preemption point in the while loop so that after a few transactions have been handled, we can produce a proof only for an finite amount of transactions.
 
 <p align="center">
 <picture>
