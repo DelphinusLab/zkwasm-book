@@ -1,4 +1,4 @@
-# ZKWASM Circuits 
+# ZKWASM Circuits
 
 A ZK Circuit in abstract is a matrix that each column represents a function $$f_i(w_j)$$ where $$j=1,2,3 \cdots$$ and a set of constraints $$C$$. A constraint in $$C$$ can be describe as a function equation $$H(f_i(w * g^j) = 0$$. Given an arbitrary instance of matrix, if all cloumn of the matrix satisfies the constraints $$C$$ then it is a valid instanation of the given circuit.
 
@@ -6,7 +6,7 @@ Futhermore, given a matrix, we have 3 different type of columns.
 
 1. Advice columns. Value of advice columns can vary among different valid instantiations.
 2. Fix columns. Value of fix columns must keep the same between different valid instantiations and the value of each fixed columns are provided at steup stage of the circuit.
-3. Instance columns. Value of instance columns usually decides the other value of the matrix and is used as the input of the verifier. We call the process of deducing other values in the matrix via the instance column to be the synthesize process. 
+3. Instance columns. Value of instance columns usually decides the other value of the matrix and is used as the input of the verifier. We call the process of deducing other values in the matrix via the instance column to be the synthesize process.
 
 ## Circuits involved in ZKWASM
 In ZKWASM, there are three different categories of circuits.
@@ -15,7 +15,7 @@ In ZKWASM, there are three different categories of circuits.
 3. Proof Batching Circuits. These are circuits to connecting proofs together to form a compact proof.
 
 
-## 5. Succinct Proof of the circuits
+## Succinct Proof of the circuits
 Compared with a standard WASM run-time, ZKWASM aims to provide a proof to prove that the output is valid so that it can be used in scenarios which require trustless and privacy computation. Moreover, the verifying algorithm needs to be simple in the sense of complexity to be useful inpractical. In zkWasm we have three different categories of circuits.
 
 1. Guest circuits: enforces the semantics of slices of execution traces.
